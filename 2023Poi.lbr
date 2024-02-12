@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -59,18 +59,6 @@
 </layers>
 <library>
 <packages>
-<package name="PROGPIN">
-<smd name="VDD_3V3" x="0" y="0" dx="2" dy="2" layer="1"/>
-<smd name="SWDIO" x="2.54" y="0" dx="2" dy="2" layer="1"/>
-<smd name="SWDCLK" x="5.08" y="0" dx="2" dy="2" layer="1"/>
-<smd name="GND" x="7.62" y="0" dx="2" dy="2" layer="1"/>
-<wire x1="-1.4732" y1="1.27" x2="-1.4732" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="-1.4732" y1="-1.27" x2="8.89" y2="-1.27" width="0.127" layer="21"/>
-<wire x1="8.89" y1="-1.27" x2="8.89" y2="1.27" width="0.127" layer="21"/>
-<wire x1="8.89" y1="1.27" x2="-1.4732" y2="1.27" width="0.127" layer="21"/>
-<circle x="-1.27" y="1.016" radius="0.0508" width="0.1524" layer="21"/>
-<text x="-1.524" y="-1.651" size="0.254" layer="25">PROG</text>
-</package>
 <package name="POILOGO">
 <wire x1="-0.403" y1="0.48" x2="0.13" y2="0.48" width="0.025" layer="21"/>
 <wire x1="-0.428" y1="0.51" x2="0.155" y2="0.51" width="0.025" layer="21"/>
@@ -1557,14 +1545,6 @@
 <wire x1="-0.099" y1="-2.05" x2="0.051" y2="-2.05" width="0.025" layer="25"/>
 <wire x1="-0.049" y1="-2.075" x2="0.051" y2="-2.075" width="0.025" layer="25"/>
 </package>
-<package name="RCA-5220-A0-TR">
-<wire x1="-0.11" y1="-0.01" x2="-0.11" y2="2.01" width="0.025" layer="21"/>
-<wire x1="-0.11" y1="-0.01" x2="5.21" y2="-0.01" width="0.025" layer="21"/>
-<wire x1="5.21" y1="2.01" x2="5.21" y2="-0.01" width="0.025" layer="21"/>
-<wire x1="5.21" y1="2.01" x2="-0.11" y2="2.01" width="0.025" layer="21"/>
-<smd name="RF" x="0" y="1" dx="0.2" dy="2" layer="1"/>
-<smd name="NC" x="5.1" y="1" dx="0.2" dy="2" layer="1"/>
-</package>
 </packages>
 <symbols>
 <symbol name="PROGPIN">
@@ -1572,7 +1552,7 @@
 <wire x1="0" y1="0" x2="33.02" y2="0" width="0.254" layer="94"/>
 <wire x1="33.02" y1="0" x2="33.02" y2="15.24" width="0.254" layer="94"/>
 <wire x1="33.02" y1="15.24" x2="0" y2="15.24" width="0.254" layer="94"/>
-<pin name="VDD_3V3" x="5.08" y="-5.08" visible="pin" length="middle" rot="R90"/>
+<pin name="VDD" x="5.08" y="-5.08" visible="pin" length="middle" rot="R90"/>
 <pin name="SWDıO" x="12.7" y="-5.08" visible="pin" length="middle" rot="R90"/>
 <pin name="SWDCLK" x="20.32" y="-5.08" visible="pin" length="middle" rot="R90"/>
 <pin name="GND" x="27.94" y="-5.08" visible="pin" length="middle" rot="R90"/>
@@ -1593,54 +1573,13 @@
 <wire x1="22.86" y1="12.7" x2="0" y2="12.7" width="0.1524" layer="94"/>
 <text x="5.08" y="5.08" size="1.778" layer="94">iBEACON</text>
 </symbol>
-<symbol name="RCA-5220-A0-TR">
-<wire x1="0.05" y1="1.37" x2="0.05" y2="-0.05" width="0.1524" layer="94"/>
-<wire x1="0.05" y1="-0.05" x2="4.63" y2="-0.05" width="0.1524" layer="94"/>
-<wire x1="4.63" y1="-0.05" x2="4.63" y2="1.37" width="0.1524" layer="94"/>
-<wire x1="4.63" y1="1.37" x2="0.05" y2="1.37" width="0.1524" layer="94"/>
-<pin name="P$2" x="-2.5" y="0.62" visible="off" length="short"/>
-<text x="0.65" y="-0.7" size="0.5" layer="95">RCA-5220</text>
-</symbol>
 </symbols>
 <devicesets>
-<deviceset name="PROGPIN">
-<gates>
-<gate name="G$1" symbol="PROGPIN" x="73.66" y="-2.54"/>
-</gates>
-<devices>
-<device name="4*2.54" package="PROGPIN">
-<connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="SWDCLK" pad="SWDCLK"/>
-<connect gate="G$1" pin="SWDıO" pad="SWDIO"/>
-<connect gate="G$1" pin="VDD_3V3" pad="VDD_3V3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="POILOGO">
 <gates>
 </gates>
 <devices>
 <device name="" package="POILOGO">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="RCA-5220-A0-TR">
-<gates>
-<gate name="ANT" symbol="RCA-5220-A0-TR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="RCA-5220-A0-TR">
-<connects>
-<connect gate="ANT" pin="P$2" pad="RF"/>
-</connects>
 <technologies>
 <technology name=""/>
 </technologies>
