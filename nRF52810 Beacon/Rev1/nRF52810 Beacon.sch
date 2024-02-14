@@ -1481,6 +1481,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <classes>
 <class number="0" name="default" width="0" drill="0">
 </class>
+<class number="2" name="GND" width="0" drill="0">
+</class>
 </classes>
 <groups>
 <schematic_group name="OSC" style="continuous"/>
